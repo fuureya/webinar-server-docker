@@ -1,0 +1,9 @@
+services:
+  compose-only:
+    image: nginx:alpine
+    container_name: compose-only
+    ports:
+      - "8888:80"
+    volumes:
+      - ./html/index.html:/usr/share/nginx/html/index.html
+    restart: unless-stopped

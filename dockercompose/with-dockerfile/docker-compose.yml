@@ -1,0 +1,9 @@
+services:
+  with-docker-file:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: with-docker-file
+    ports:
+      - "8888:80"
+    restart: unless-stopped
