@@ -1,0 +1,7 @@
+database.localhost {
+    reverse_proxy phpmyadmin_ui
+}
+
+laravel.localhost {
+    reverse_proxy laravel-apps:8000
+}

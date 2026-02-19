@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Example');
+    return "APLIKASI LARAVEL SUDAH BERJALAN DI SERVER!!!!!!!!!!!!!";
 });
