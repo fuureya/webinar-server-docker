@@ -1,0 +1,22 @@
+services:
+  laravel-apps:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel-apps
+    restart: unless-stopped
+    # ports:
+    #   - "8000:8000"
+    volumes:
+      - ./.env:/app/.env
+      - ./storage:/app/storage
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    environment:
+      APP_ENV: ${APP_ENV:-production}
+      APP_DEBUG: ${APP_DEBUG:-false}
+    networks:
+      - web-network
+      
+networks:
+  web-network:
+    external: true
